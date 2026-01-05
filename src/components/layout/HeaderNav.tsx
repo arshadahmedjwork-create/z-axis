@@ -11,7 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo-transparent.png";
 
 const services = [
   { title: "Migrate", href: "/what-we-do/migrate", description: "Express Entry, PNP & more" },
