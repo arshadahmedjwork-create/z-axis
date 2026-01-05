@@ -11,7 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo-transparent.png";
+import logo from "@/assets/logo.jpg";
 
 const services = [
   { title: "Migrate", href: "/what-we-do/migrate", description: "Express Entry, PNP & more" },
@@ -38,9 +38,9 @@ const HeaderNav = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img 
-              src={logo} 
-              alt="Z-Axis Immigration" 
+            <img
+              src={logo}
+              alt="Z-Axis Immigration"
               className="h-12 md:h-14 w-auto"
             />
           </Link>
@@ -48,8 +48,8 @@ const HeaderNav = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             <Link to="/">
-              <Button 
-                variant="nav" 
+              <Button
+                variant="nav"
                 className={cn(isActive("/") && "text-primary")}
               >
                 Home
@@ -86,8 +86,8 @@ const HeaderNav = () => {
             </NavigationMenu>
 
             <Link to="/plans-pricing">
-              <Button 
-                variant="nav" 
+              <Button
+                variant="nav"
                 className={cn(isActive("/plans-pricing") && "text-primary")}
               >
                 Plans & Pricing
@@ -95,8 +95,8 @@ const HeaderNav = () => {
             </Link>
 
             <Link to="/eligibility-assessment">
-              <Button 
-                variant="nav" 
+              <Button
+                variant="nav"
                 className={cn(isActive("/eligibility-assessment") && "text-primary")}
               >
                 Eligibility
@@ -104,8 +104,8 @@ const HeaderNav = () => {
             </Link>
 
             <Link to="/contact-us">
-              <Button 
-                variant="nav" 
+              <Button
+                variant="nav"
                 className={cn(isActive("/contact-us") && "text-primary")}
               >
                 Contact
@@ -145,14 +145,14 @@ const HeaderNav = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border animate-slide-up">
             <nav className="flex flex-col gap-1">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="px-4 py-3 hover:bg-accent rounded-md"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
-              
+
               <div className="px-4 py-3">
                 <div className="flex items-center justify-between font-medium mb-2">
                   <span>What We Do</span>
@@ -172,24 +172,24 @@ const HeaderNav = () => {
                 </div>
               </div>
 
-              <Link 
-                to="/plans-pricing" 
+              <Link
+                to="/plans-pricing"
                 className="px-4 py-3 hover:bg-accent rounded-md"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Plans & Pricing
               </Link>
-              
-              <Link 
-                to="/eligibility-assessment" 
+
+              <Link
+                to="/eligibility-assessment"
                 className="px-4 py-3 hover:bg-accent rounded-md"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Eligibility Assessment
               </Link>
-              
-              <Link 
-                to="/contact-us" 
+
+              <Link
+                to="/contact-us"
                 className="px-4 py-3 hover:bg-accent rounded-md"
                 onClick={() => setMobileMenuOpen(false)}
               >

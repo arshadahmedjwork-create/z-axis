@@ -42,6 +42,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return () => subscription.unsubscribe();
   }, []);
 
+  // Aggressively clear hash on mount if it contains access_token
+  useEffect(() => {
+    if (window.location.hash && window.location.hash.includes('access_token')) {
+      console.log("Clearing auth hash...");
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }, []);
+
   const signInWithGoogle = async () => {
     const redirectUrl = window.location.href;
 
