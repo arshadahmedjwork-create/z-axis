@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Z-Axis Immigration Design System
+   Brand: Red/White/Black premium palette
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Primary - Z-Axis Red */
+    --primary: 1 79% 55%; /* Red */
+    --primary-foreground: 0 0% 100%; /* White */
+    --primary-hover: 1 77% 49%;
+    --primary-soft: 0 86% 96%;
+
+    /* Background & Surface - Pure White */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 25%; /* Dark Gray text */
+    --surface: 0 0% 98%;
+
+    /* Cards & Popover */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 25%;
+
+    /* Secondary */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 25%;
+
+    /* Muted */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent */
+    --accent: 0 86% 98%;
+    --accent-foreground: 1 79% 55%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input - Neutral Gray */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 1 79% 55%;
+
+    /* Radius */
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 1 79% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 86% 96%;
+    --sidebar-accent-foreground: 1 79% 55%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 1 79% 55%;
+
+    /* Custom Tokens - Mapped to Red/White theme */
+    --dark: 1 79% 55%; /* Now maps to Primary Red as requested */
+    --text-on-dark: 0 0% 100%; /* White */
+  }
+
+  /* Dark mode removed/reset to match light theme to enforce White/Red only */
+  .dark {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 25%;
+    --primary: 1 79% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 25%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 86% 98%;
+    --accent-foreground: 1 79% 55%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 1 79% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  /* Fade animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-delayed {
+    animation: fadeIn 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+
+  /* Stagger animation delays */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+
+  /* Premium hover effects */
+  .hover-lift {
+    @apply transition-all duration-200 ease-out;
+  }
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-200;
+  }
+  .hover-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

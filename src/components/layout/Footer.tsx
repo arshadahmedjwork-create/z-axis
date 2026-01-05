@@ -1,0 +1,169 @@
+import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import logo from "@/assets/logo-transparent.png";
+
+const quickLinks = [
+  { title: "Home", href: "/" },
+  { title: "What We Do", href: "/what-we-do" },
+  { title: "Plans & Pricing", href: "/plans-pricing" },
+  { title: "Eligibility Assessment", href: "/eligibility-assessment" },
+  { title: "Contact Us", href: "/contact-us" },
+];
+
+const services = [
+  { title: "Migrate to Canada", href: "/what-we-do/migrate" },
+  { title: "Study in Canada", href: "/what-we-do/study" },
+  { title: "Work in Canada", href: "/what-we-do/work" },
+  { title: "Visit Canada", href: "/what-we-do/visit" },
+  { title: "Business Immigration", href: "/what-we-do/business" },
+  { title: "Family Sponsorship", href: "/what-we-do/sponsor" },
+];
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-background border-t border-border text-foreground">
+      {/* Main Footer */}
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand Column */}
+          <div className="space-y-4">
+            <Link to="/" className="inline-block">
+              <img
+                src={logo}
+                alt="Z-Axis Immigration"
+                className="h-16 w-auto"
+              />
+            </Link>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Z-Axis Immigration is a licensed immigration consulting firm led by Regulated Canadian Immigration Consultants (RCIC). We provide expert guidance for all your Canadian immigration needs.
+            </p>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+                aria-label="YouTube"
+              >
+                <Youtube className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Our Services</h3>
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service.href}>
+                  <Link
+                    to={service.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-muted-foreground">
+                  Mississauga, Ontario, Canada
+                </span>
+              </li>
+              <li>
+                <a
+                  href="tel:+16475334499"
+                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                  +1 647 533 4499
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:canada@z-axis.ca"
+                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                  canada@z-axis.ca
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-border/20">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+            <p>© {currentYear} Z-Axis Immigration. All rights reserved.</p>
+            <div className="flex items-center gap-6">
+              <Link to="/privacy-policy" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms-conditions" className="hover:text-primary transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
