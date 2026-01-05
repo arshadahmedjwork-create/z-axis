@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext, useContext, ReactNode } from "react";
 import { User, Session } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
 
 interface AuthContextType {
   user: User | null;
@@ -16,6 +17,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Set up auth state listener FIRST
@@ -24,11 +26,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         setSession(session);
         setUser(session?.user ?? null);
         setLoading(false);
-
-        // Clear the hash from the URL if we have a session to clean up the address bar
-        if (session && window.location.hash && window.location.hash.includes('access_token')) {
-          window.history.replaceState(null, '', window.location.pathname + window.location.search);
-        }
       }
     );
 
@@ -46,9 +43,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (window.location.hash && window.location.hash.includes('access_token')) {
       console.log("Clearing auth hash...");
-      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      // Use navigate with replace to clean the URL
+      navigate(window.location.pathname + window.location.search, { replace: true });
     }
-  }, []);
+  }, [navigate]);
 
   const signInWithGoogle = async () => {
     const redirectUrl = window.location.href;
