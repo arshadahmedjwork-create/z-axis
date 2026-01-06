@@ -26,7 +26,7 @@ const BookConsultation = () => {
   return (
     <AppShell>
       {/* Hero */}
-      <section className="bg-dark text-text-on-dark py-16 md:py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
@@ -36,7 +36,7 @@ const BookConsultation = () => {
               Book a Consultation
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Meet with a Regulated Canadian Immigration Consultant (RCIC) who will 
+              Meet with a Regulated Canadian Immigration Consultant (RCIC) who will
               assess your profile and guide you through your best immigration options.
             </p>
           </div>
@@ -102,7 +102,7 @@ const BookConsultation = () => {
             Ready to Begin?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            First, check your eligibility to find the best consultation type for your needs. 
+            First, check your eligibility to find the best consultation type for your needs.
             Then proceed to book your appointment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
