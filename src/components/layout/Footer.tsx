@@ -39,6 +39,13 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Z-Axis Immigration is a licensed immigration consulting firm led by Regulated Canadian Immigration Consultants (RCIC). We provide expert guidance for all your Canadian immigration needs.
             </p>
+
+            {/* Accreditations */}
+            <div className="flex gap-4 items-center">
+              <img src="/src/assets/rcic-logo-footer.png" alt="RCIC License" className="h-12 w-auto object-contain" />
+              <img src="/src/assets/capic-acpi-logo.png" alt="CAPIC ACPI" className="h-12 w-auto object-contain" />
+            </div>
+
             <div className="flex items-center gap-4">
               <a
                 href="https://facebook.com"
@@ -120,18 +127,50 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-sm text-muted-foreground">
-                  Mississauga, Ontario, Canada
+                  <span className="font-semibold text-foreground">Head Office:</span><br />
+                  2020 Winston Park, Oakville,<br />
+                  Ontario, Canada L6H 6X7
                 </span>
               </li>
-              <li>
-                <a
-                  href="tel:+16475334499"
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                  +1 647 533 4499
-                </a>
+
+              <li className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">Branch - India:</span><br />
+                  Puram Prakasam Rd, Balaji Nagar,<br />
+                  Chennai-14
+                </span>
               </li>
+
+              <li className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">Branch - USA:</span><br />
+                  4126 W Rochelle Rd, Irving,<br />
+                  Texas 75062<br />
+                  Ph: +1 469 351 9554
+                </span>
+              </li>
+
+              <li>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="tel:+19052151888"
+                    className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                    +1 (905) 215-1888
+                  </a>
+                  <a
+                    href="tel:+18884151888"
+                    className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                    +1 (888) 415-1888
+                  </a>
+                </div>
+              </li>
+
               <li>
                 <a
                   href="mailto:canada@z-axis.ca"

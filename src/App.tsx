@@ -24,8 +24,10 @@ import AdminAssessments from "./pages/admin/AdminAssessments";
 import AdminBookings from "./pages/admin/AdminBookings";
 import AdminUsers from "./pages/admin/AdminUsers";
 import AdminContactSubmissions from "./pages/admin/AdminContactSubmissions";
-
-const queryClient = new QueryClient();
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import AdminBlogs from "./pages/admin/AdminBlogs";
+import BlogEditor from "./pages/admin/BlogEditor";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -46,6 +48,8 @@ const App = () => (
             <Route path="/eligibility-assessment" element={<EligibilityAssessment />} />
             <Route path="/client-portal" element={<ClientPortal />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
 
@@ -54,6 +58,9 @@ const App = () => (
               <Route index element={<Navigate to="/admin/assessments" replace />} />
               <Route path="assessments" element={<AdminAssessments />} />
               <Route path="bookings" element={<AdminBookings />} />
+              <Route path="blogs" element={<AdminBlogs />} />
+              <Route path="blogs/new" element={<BlogEditor />} />
+              <Route path="blogs/:id" element={<BlogEditor />} />
               <Route path="users" element={<AdminUsers />} />
               <Route path="contacts" element={<AdminContactSubmissions />} />
             </Route>

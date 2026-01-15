@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroToronto from "@/assets/hero-toronto.png";
+import heroBg from "@/assets/hero-bg.png";
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroToronto} alt="Toronto skyline" className="w-full h-full object-cover" />
+        <img src={heroBg} alt="Toronto skyline" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
       </div>
 

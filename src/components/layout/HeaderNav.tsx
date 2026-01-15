@@ -94,6 +94,15 @@ const HeaderNav = () => {
               </Button>
             </Link>
 
+            <Link to="/blog">
+              <Button
+                variant="nav"
+                className={cn(isActive("/blog") && "text-primary")}
+              >
+                Blog
+              </Button>
+            </Link>
+
             <Link to="/eligibility-assessment">
               <Button
                 variant="nav"
@@ -178,6 +187,14 @@ const HeaderNav = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Plans & Pricing
+              </Link>
+
+              <Link
+                to="/blog"
+                className="px-4 py-3 hover:bg-accent rounded-md"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
               </Link>
 
               <Link

@@ -163,10 +163,21 @@ const ContactUs = () => {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Office Address</h3>
-                    <p className="text-muted-foreground">
-                      Mississauga, Ontario, Canada
-                    </p>
+                    <h3 className="font-semibold mb-1">Our Offices</h3>
+                    <div className="space-y-4 text-sm text-muted-foreground">
+                      <div>
+                        <p className="font-medium text-foreground">Head Office:</p>
+                        <p>2020 Winston Park, Oakville, Ontario, Canada L6H 6X7</p>
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Branch - India:</p>
+                        <p>Puram Prakasam Rd, Balaji Nagar, Chennai-14</p>
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">Branch - USA:</p>
+                        <p>4126 W Rochelle Rd, Irving, Texas 75062</p>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -178,12 +189,23 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <a
-                      href="tel:+16475334499"
-                      className="text-black hover:underline font-medium"
-                    >
-                      +1 647 533 4499
-                    </a>
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href="tel:+19052151888"
+                        className="text-black hover:underline font-medium"
+                      >
+                        +1 (905) 215-1888
+                      </a>
+                      <a
+                        href="tel:+18884151888"
+                        className="text-black hover:underline font-medium"
+                      >
+                        +1 (888) 415-1888
+                      </a>
+                      <span className="text-sm text-muted-foreground mt-1">
+                        USA: +1 469 351 9554
+                      </span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

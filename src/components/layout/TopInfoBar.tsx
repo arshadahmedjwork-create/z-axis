@@ -15,11 +15,19 @@ const TopInfoBar = () => {
           </a>
 
           <a
-            href="tel:+16475334499"
+            href="tel:+19052151888"
             className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <Phone className="h-4 w-4 text-primary" />
-            <span>+1 647 533 4499</span>
+            <span>+1 (905) 215-1888</span>
+          </a>
+
+          <a
+            href="tel:+18884151888"
+            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Phone className="h-4 w-4 text-primary" />
+            <span>+1 (888) 415-1888</span>
           </a>
 
           <div className="hidden lg:flex items-center gap-2 text-muted-foreground">

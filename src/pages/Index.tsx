@@ -6,6 +6,7 @@ import WhyCanadaSection from "@/components/home/WhyCanadaSection";
 import EducationTiles from "@/components/home/EducationTiles";
 import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
 import FinalCTASection from "@/components/home/FinalCTASection";
+import ImageCarousel from "@/components/home/ImageCarousel";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <TrustBadges />
       <ServiceGrid />
       <WhyCanadaSection />
+      <ImageCarousel />
       <EducationTiles />
       <TestimonialsCarousel />
       <FinalCTASection />

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link, useNavigate, Outlet, useLocation } from "react-router-dom";
-import { Shield, Users, CreditCard, ClipboardCheck, LogOut, Home, Mail } from "lucide-react";
+import { Shield, Users, CreditCard, ClipboardCheck, LogOut, Home, Mail, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { useAdmin } from "@/hooks/useAdmin";
@@ -8,6 +8,7 @@ import { useAdmin } from "@/hooks/useAdmin";
 const navItems = [
   { title: "Assessments", path: "/admin/assessments", icon: ClipboardCheck },
   { title: "Bookings", path: "/admin/bookings", icon: CreditCard },
+  { title: "Blogs", path: "/admin/blogs", icon: FileText },
   { title: "Messages", path: "/admin/contacts", icon: Mail },
   { title: "Users", path: "/admin/users", icon: Users },
 ];
