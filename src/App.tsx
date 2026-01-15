@@ -29,6 +29,8 @@ import BlogPost from "./pages/BlogPost";
 import AdminBlogs from "./pages/admin/AdminBlogs";
 import BlogEditor from "./pages/admin/BlogEditor";
 
+const queryClient = new QueryClient();
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
