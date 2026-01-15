@@ -5,6 +5,8 @@ import AppShell from "@/components/layout/AppShell";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { Database } from "@/integrations/supabase/types";
+import blogHeader from "@/assets/blog-header.png";
+import logo from "@/assets/logo-transparent.png";
 
 type Blog = Database["public"]["Tables"]["blogs"]["Row"];
 
@@ -33,12 +35,18 @@ const Blog = () => {
         }
     };
 
+    const stripHtml = (html: string) => {
+        const tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
+    };
+
     return (
         <AppShell>
             {/* Header */}
             <div className="relative h-[300px] w-full overflow-hidden">
                 <img
-                    src="/src/assets/blog-header-bg.png"
+                    src={blogHeader}
                     alt="Blog"
                     className="w-full h-full object-cover"
                 />
@@ -64,11 +72,16 @@ const Blog = () => {
                             {blogs.map((blog) => (
                                 <Link key={blog.id} to={`/blog/${blog.slug}`} className="group h-full">
                                     <Card className="h-full flex flex-col hover:shadow-lg transition-shadow overflow-hidden">
-                                        <div className="h-48 overflow-hidden">
+                                        <div className="h-48 overflow-hidden bg-muted flex items-center justify-center">
                                             <img
-                                                src={blog.image_url}
+                                                src={blog.image_url || logo}
                                                 alt={blog.title}
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                                className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${!blog.image_url ? "object-contain p-8 opacity-50" : ""}`}
+                                                onError={(e) => {
+                                                    const target = e.target as HTMLImageElement;
+                                                    target.src = logo;
+                                                    target.className = "w-full h-full object-contain p-8 opacity-50 group-hover:scale-105 transition-transform duration-300";
+                                                }}
                                             />
                                         </div>
                                         <CardHeader className="p-4 md:p-6 pb-2">
@@ -78,7 +91,7 @@ const Blog = () => {
                                         </CardHeader>
                                         <CardContent className="p-4 md:p-6 pt-0 flex-grow">
                                             <p className="text-muted-foreground line-clamp-3">
-                                                {blog.content.substring(0, 150)}...
+                                                {stripHtml(blog.content).substring(0, 150)}...
                                             </p>
                                         </CardContent>
                                         <CardFooter className="p-4 md:p-6 pt-0 text-sm text-muted-foreground flex items-center gap-4 mt-auto">

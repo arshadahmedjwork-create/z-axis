@@ -5,6 +5,7 @@ import AppShell from "@/components/layout/AppShell";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Database } from "@/integrations/supabase/types";
+import logo from "@/assets/logo-transparent.png";
 
 type Blog = Database["public"]["Tables"]["blogs"]["Row"];
 
@@ -63,10 +64,16 @@ const BlogPost = () => {
         <AppShell>
             {/* Header */}
             <div className="relative h-[400px] w-full overflow-hidden">
+// Header image logic moved to implementation
                 <img
-                    src={blog.image_url}
+                    src={blog.image_url || logo}
                     alt={blog.title}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full object-cover ${!blog.image_url ? "object-contain p-12 opacity-20 bg-muted" : ""}`}
+                    onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = logo;
+                        target.className = "w-full h-full object-contain p-12 opacity-20 bg-muted";
+                    }}
                 />
                 <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center">
                     <h1 className="text-3xl md:text-5xl font-bold text-white tracking-wide max-w-4xl">
@@ -86,9 +93,10 @@ const BlogPost = () => {
                         Back to Blog
                     </Link>
 
-                    <div className="prose prose-lg prose-slate max-w-none whitespace-pre-wrap">
-                        {blog.content}
-                    </div>
+                    <div
+                        className="prose prose-lg prose-slate max-w-none dark:prose-invert"
+                        dangerouslySetInnerHTML={{ __html: blog.content }}
+                    />
                 </div>
             </article>
         </AppShell>

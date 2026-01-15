@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import logo from "@/assets/logo-transparent.png";
+import { FloatingPaths } from "@/components/ui/background-paths";
 
 const quickLinks = [
   { title: "Home", href: "/" },
@@ -23,9 +24,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background border-t border-border text-foreground">
+    <footer className="relative bg-background border-t border-border text-foreground overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-40">
+        <FloatingPaths position={1} />
+        <FloatingPaths position={-1} />
+      </div>
+
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12 md:py-16">
+      <div className="relative z-10 container mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="space-y-4">
@@ -186,7 +192,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border/20">
+      <div className="relative z-10 border-t border-border/20">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
             <p>© {currentYear} Z-Axis Immigration. All rights reserved.</p>

@@ -28,6 +28,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import AdminBlogs from "./pages/admin/AdminBlogs";
 import BlogEditor from "./pages/admin/BlogEditor";
+import BlogSeeder from "./pages/admin/BlogSeeder";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => (
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/seed" element={<BlogSeeder />} />
 
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminDashboard />}>

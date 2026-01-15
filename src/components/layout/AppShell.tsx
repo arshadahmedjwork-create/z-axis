@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import TopInfoBar from "./TopInfoBar";
 import HeaderNav from "./HeaderNav";
 import Footer from "./Footer";
+import FinalCTASection from "../home/FinalCTASection";
 
 interface AppShellProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ const AppShell = ({ children }: AppShellProps) => {
       <main className="flex-1">
         {children}
       </main>
+      <FinalCTASection />
       <Footer />
     </div>
   );
