@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import founderImage from "@/assets/founder-trudeau.jpg";
 
 const FounderSection = () => {
     return (
@@ -11,7 +12,7 @@ const FounderSection = () => {
                         <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-blue-500/10 rounded-2xl blur-xl opacity-70"></div>
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/20 group">
                             <img
-                                src="/src/assets/founder-trudeau.jpg"
+                                src={founderImage}
                                 alt="Founder with Prime Minister Justin Trudeau"
                                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                             />

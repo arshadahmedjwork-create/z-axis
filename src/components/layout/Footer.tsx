@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import logo from "@/assets/logo-transparent.png";
+import rcicLogo from "@/assets/rcic-logo-footer.png";
+import capicLogo from "@/assets/capic-acpi-logo.png";
 import { FloatingPaths } from "@/components/ui/background-paths";
 
 const quickLinks = [
@@ -48,8 +50,8 @@ const Footer = () => {
 
             {/* Accreditations */}
             <div className="flex gap-4 items-center">
-              <img src="/src/assets/rcic-logo-footer.png" alt="RCIC License" className="h-12 w-auto object-contain" />
-              <img src="/src/assets/capic-acpi-logo.png" alt="CAPIC ACPI" className="h-12 w-auto object-contain" />
+              <img src={rcicLogo} alt="RCIC License" className="h-12 w-auto object-contain" />
+              <img src={capicLogo} alt="CAPIC ACPI" className="h-12 w-auto object-contain" />
             </div>
 
             <div className="flex items-center gap-4">
